@@ -118,7 +118,7 @@ export class ApiDataService {
           Authorization: `Bearer ${token}`,
         }),
       }).pipe(
-        // map(this.extractResponseData),
+        map(this.extractResponseData),
         catchError(this.handleError)
       );
   }
@@ -147,7 +147,7 @@ export class ApiDataService {
           Authorization: `Bearer ${token}`,
         }),
       }).pipe(
-        // map(this.extractResponseData),
+        map(this.extractResponseData),
         catchError(this.handleError)
       );
   }
@@ -162,7 +162,7 @@ export class ApiDataService {
           Authorization: `Bearer ${token}`,
         }),
       }).pipe(
-        // map(this.extractResponseData),
+        map(this.extractResponseData),
         catchError(this.handleError)
       );
   }
