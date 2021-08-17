@@ -94,9 +94,9 @@ export class ApiDataService {
   }
 
   //get user by username
-  public getUser(): Observable<any> {
+  public getUser(user: any): Observable<any> {
     const token = localStorage.getItem('token');
-    const user = localStorage.getItem('user');
+    // const user = localStorage.getItem('user');
     return this.http
       .get(`${apiUrl}/users/${user}`, {
         headers: new HttpHeaders({
@@ -142,7 +142,7 @@ export class ApiDataService {
     const token = localStorage.getItem('token');
     const user = localStorage.getItem('user');
     return this.http
-      .post(`${apiUrl}/users/${user}/favorites`, { movieId: movieId }, {
+      .post(`${apiUrl}/users/${user}/favorites/${movieId}`, movieId, {
         headers: new HttpHeaders({
           Authorization: `Bearer ${token}`,
         }),
