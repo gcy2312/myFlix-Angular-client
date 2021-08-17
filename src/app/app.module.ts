@@ -25,10 +25,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { MovieDirectorComponent } from './movie-director/movie-director.component';
 import { MovieGenreComponent } from './movie-genre/movie-genre.component';
 import { MovieSynopsisComponent } from './movie-synopsis/movie-synopsis.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { UserProfileUpdateComponent } from './user-profile-update/user-profile-update.component';
+import { UserProfileDeleteComponent } from './user-profile-delete/user-profile-delete.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
   { path: 'movies', component: MovieCardComponent },
+  { path: 'profile', component: UserProfileComponent },
   { path: '', redirectTo: 'welcome', pathMatch: 'prefix' },
 ];
 
@@ -41,7 +46,11 @@ const appRoutes: Routes = [
     WelcomePageComponent,
     MovieDirectorComponent,
     MovieGenreComponent,
-    MovieSynopsisComponent
+    MovieSynopsisComponent,
+    UserProfileComponent,
+    UserProfileUpdateComponent,
+    UserProfileDeleteComponent,
+    NavBarComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
