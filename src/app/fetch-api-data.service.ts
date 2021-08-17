@@ -109,11 +109,11 @@ export class ApiDataService {
   }
 
   //update user
-  public editUser(userDetails: any): Observable<any> {
+  public editUser(userData: any): Observable<any> {
     const token = localStorage.getItem('token');
     const user = localStorage.getItem('user');
     return this.http
-      .put(`${apiUrl}/users/${user}`, userDetails, {
+      .put(`${apiUrl}/users/${user}`, userData, {
         headers: new HttpHeaders({
           Authorization: `Bearer ${token}`,
         }),
