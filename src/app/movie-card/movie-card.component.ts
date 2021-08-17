@@ -17,6 +17,7 @@ import { MovieSynopsisComponent } from '../movie-synopsis/movie-synopsis.compone
 
 export class MovieCardComponent {
   movies: any[] = [];
+  userFaves: any[] = [];
 
   constructor(
     public fetchApiData: ApiDataService,
@@ -25,6 +26,7 @@ export class MovieCardComponent {
 
   ngOnInit(): void {
     this.getMovies();
+    this.getUserFaves();
   }
 
   getMovies(): void {
@@ -55,4 +57,38 @@ export class MovieCardComponent {
       width: '500px'
     });
   }
+
+  getUserFaves(): void {
+    const user = localStorage.getItem('user');
+    this.fetchApiData.getUser(user).subscribe((resp: any) => {
+      this.userFaves = resp.FavoriteMovies;
+    });
+    console.log(this.userFaves);
+  }
+
+  isFavorite(movieId: string) {
+    return this.userFaves.includes(movieId);
+  }
+
+  toggleFavorite(movieId: string): any {
+    if (this.isFavorite(movieId)) {
+      this.fetchApiData.deleteFavorite(movieId).subscribe((resp: any) => {
+        this.snackBar.open('Removed from favorites!', 'OK', {
+          duration: 2000,
+        });
+      });
+      const index = this.userFaves.indexOf(movieId);
+      return this.userFaves.splice(index, 1);
+    } else {
+      this.fetchApiData.addFavorite(movieId).subscribe((resp: any) => {
+        this.snackBar.open('Added to favorites!', 'OK', {
+          duration: 2000,
+        });
+      });
+    }
+    console.log(this.userFaves);
+    return this.userFaves.push(movieId);
+  }
+
+
 }
