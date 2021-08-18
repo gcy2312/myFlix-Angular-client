@@ -42,9 +42,9 @@ export class UserProfileUpdateComponent implements OnInit {
         duration: 2000,
       });
     });
-    // setTimeout(function () {
-    //   window.location.reload();
-    // }, 1000);
+    setTimeout(function () {
+      window.location.reload();
+    }, 1000);
   }
 
 }
