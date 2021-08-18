@@ -1,2 +1,48 @@
 <app-nav-bar></app-nav-bar>
-<p>user-profile works!</p>
+<div>
+  <section>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Profile:</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <form>
+          <mat-form-field hintLabel="Username">
+            <input matInput name="Username" placeholder={{userData.Username}} readonly>
+          </mat-form-field>
+          <mat-form-field hintLabel="Password">
+            <input matInput name="Password" placeholder="**********" readonly>
+          </mat-form-field>
+          <mat-form-field hintLabel="Email">
+            <input matInput name="Email" placeholder={{userData.Email}} readonly>
+          </mat-form-field>
+          <mat-form-field hintLabel="Birthday">
+            <input matInput name="Birthday" placeholder={{userData.Birthday}} readonly>
+          </mat-form-field>
+        </form>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button (click)="openUpdateDialog()">Update</button>
+        <button mat-raised-button (click)="openDeleteDialog()">Delete Account</button>
+      </mat-card-actions>
+    </mat-card>
+  </section>
+
+  <section>
+    <div class="favorites-container">
+      <h2>Favorite Movies:</h2>
+      <mat-card *ngFor="let userFav of userFavs">
+        <mat-card-header>
+          <mat-card-title>{{userFav.Title}}</mat-card-title>
+        </mat-card-header>
+        <img src={{userFav.ImagePath}} width=400, height="auto" />
+
+        <mat-card-actions>
+          <button mat-button (click)="removeFav(userFav._id)">Remove from favorites</button>
+        </mat-card-actions>
+
+      </mat-card>
+    </div>
+
+  </section>
+</div>
