@@ -17,7 +17,7 @@ import { MovieSynopsisComponent } from '../movie-synopsis/movie-synopsis.compone
 
 export class MovieCardComponent {
   movies: any[] = [];
-  userFaves: any[] = [];
+  userFavs: any[] = [];
 
   constructor(
     public fetchApiData: ApiDataService,
@@ -26,7 +26,7 @@ export class MovieCardComponent {
 
   ngOnInit(): void {
     this.getMovies();
-    this.getUserFaves();
+    this.getUserFavs();
   }
 
   getMovies(): void {
@@ -58,16 +58,16 @@ export class MovieCardComponent {
     });
   }
 
-  getUserFaves(): void {
+  getUserFavs(): void {
     const user = localStorage.getItem('user');
     this.fetchApiData.getUser(user).subscribe((resp: any) => {
-      this.userFaves = resp.FavoriteMovies;
+      this.userFavs = resp.FavoriteMovies;
     });
-    console.log(this.userFaves);
+    console.log(this.userFavs);
   }
 
   isFavorite(movieId: string) {
-    return this.userFaves.includes(movieId);
+    return this.userFavs.includes(movieId);
   }
 
   toggleFavorite(movieId: string): any {
@@ -77,8 +77,9 @@ export class MovieCardComponent {
           duration: 2000,
         });
       });
-      const index = this.userFaves.indexOf(movieId);
-      return this.userFaves.splice(index, 1);
+      //mutates array by removing "index"
+      const index = this.userFavs.indexOf(movieId);
+      return this.userFavs.splice(index, 1);
     } else {
       this.fetchApiData.addFavorite(movieId).subscribe((resp: any) => {
         this.snackBar.open('Added to favorites!', 'OK', {
@@ -86,8 +87,8 @@ export class MovieCardComponent {
         });
       });
     }
-    console.log(this.userFaves);
-    return this.userFaves.push(movieId);
+    console.log(this.userFavs);
+    return this.userFavs.push(movieId);
   }
 
 
