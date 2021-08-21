@@ -40,21 +40,21 @@ export class MovieCardComponent {
   getDirector(name: string, bio: string, birth: string, death: string): void {
     this.dialog.open(MovieDirectorComponent, {
       data: { name: name, bio: bio, birth: birth, death: death },
-      width: '500px'
+      width: '600px'
     });
   }
 
   getGenre(name: string, description: string): void {
     this.dialog.open(MovieGenreComponent, {
       data: { name: name, description: description },
-      width: '500px'
+      width: '600px'
     });
   }
 
   getSynopsis(title: string, description: string, poster: string): void {
     this.dialog.open(MovieSynopsisComponent, {
       data: { title, description, poster },
-      width: '500px'
+      width: '600px'
     });
   }
 
