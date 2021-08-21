@@ -1,6 +1,13 @@
-<div>
-  <h2 mat-dialog-title>{{data.name}}</h2>
+<div class="dir-container">
 
-  <mat-dialog-content>{{data.bio}}</mat-dialog-content>
+  <mat-card-header class="header">
+    <h2 mat-dialog-title class="dirtitle">{{data.name}}</h2>
+    <button class="close" mat-icon-button aria-label="Close the director window button" mat-dialog-close>
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-card-header>
+
+  <mat-card-content class="dircontent">{{data.bio}}</mat-card-content>
+
 
 </div>

@@ -1,8 +1,17 @@
-<div>
-  <h2 mat-dialog-title>{{data.title}}</h2>
-  <img src={{data.poster}} height=250 width=auto />
+<div class="syn-container">
 
-  <mat-dialog-content>
+  <mat-card-header class="header">
+    <h2 mat-dialog-title class="title">{{data.title}}</h2>
+    <button class="close" mat-icon-button aria-label="Close the synopsis window button" mat-dialog-close>
+      <mat-icon>close</mat-icon>
+    </button>
+
+  </mat-card-header>
+
+  <img class="movieimg" src={{data.poster}} height=250 width=auto />
+
+
+  <mat-dialog-content class="syndesc">
     {{ data.description }}
   </mat-dialog-content>
 

@@ -1,26 +1,33 @@
-<mat-card>
-  <mat-card-header>
-    <mat-card-title>Update Profile</mat-card-title>
-  </mat-card-header>
-  <mat-card-content>
-    <form>
-      <mat-form-field>
-        <input matInput [(ngModel)]="userData.Username" placeholder="Username" type="text" name="Username" required>
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput [(ngModel)]="userData.Password" type="password" placeholder="Password" name="Password" required>
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput [(ngModel)]="userData.Email" type="email" placeholder="Email" name="Email" required>
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput [(ngModel)]="userData.Birthday" type="date" placeholder="Birthday" name="Birthday">
-      </mat-form-field>
-    </form>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-raised-button (click)="updateUser()" color="primary">
-      Confirm
-    </button>
-  </mat-card-actions>
-</mat-card>
+<div class="update-container">
+
+  <mat-card>
+    <mat-card-header class="updatetitle">
+      <mat-card-title class="updatetitle">Update Profile</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="updateform">
+      <form>
+        <mat-form-field class="formtext">
+          <input class="formtext" matInput [(ngModel)]="userData.Username" placeholder="Username" type="text"
+                 name="Username" required>
+        </mat-form-field>
+        <mat-form-field class="formtext">
+          <input class="formtext" matInput [(ngModel)]="userData.Password" type="password" placeholder="Password"
+                 name="Password" required>
+        </mat-form-field>
+        <mat-form-field class="formtext">
+          <input class="formtext" matInput [(ngModel)]="userData.Email" type="email" placeholder="Email" name="Email"
+                 required>
+        </mat-form-field>
+        <mat-form-field class="formtext">
+          <input class="formtext" matInput [(ngModel)]="userData.Birthday" type="date" placeholder="Birthday"
+                 name="Birthday">
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <button class="updatebtn" mat-raised-button (click)="updateUser()" color="primary">
+        Confirm
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

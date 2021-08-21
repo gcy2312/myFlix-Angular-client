@@ -1,30 +1,36 @@
 <app-nav-bar></app-nav-bar>
 <div class="movies-container">
-  <mat-card *ngFor="let movie of movies;" style="flex: 1 1 auto;">
-    <mat-card-header>
-      <mat-card-title>{{movie.Title}}</mat-card-title>
-      <mat-card-subtitle>Directed by: {{movie.Director.Name}}</mat-card-subtitle>
+  <mat-card class="moviecard" *ngFor="let movie of movies;" style="flex: 1 1 auto;">
+    <mat-card-header class="movietitle">
+      <mat-card-title class="titletext">{{movie.Title}}</mat-card-title>
+      <mat-card-subtitle class="moviesubtitle">Directed by: {{movie.Director.Name}}</mat-card-subtitle>
     </mat-card-header>
-    <img src={{movie.ImagePath}} alt={{movie.Title}} height=300 width=auto />
-    <mat-card-actions>
-      <button mat-button color="primary" (click)="getGenre(movie.Genre.Name, movie.Genre.Description)">
-        Genre
-      </button>
-      <button mat-button color="primary"
-              (click)="getDirector(movie.Director.Name, movie.Director.Bio, movie.Director.Birth,movie.Director.Death)">
-        Director
-      </button>
-      <button mat-button color="primary" (click)="getSynopsis(movie.Title, movie.Description, movie.PosterPath)">
-        Synopsis
-      </button>
+    <div class="movieimg">
+      <img src={{movie.ImagePath}} alt={{movie.Title}} height=auto width='90%' />
+    </div>
 
-      <button mat-icon-button (click)="toggleFavorite(movie._id)">
-        <mat-icon color="primary">
-          <span *ngIf="isFavorite(movie._id); else block">favorite</span>
-          <ng-template #block>favorite_border</ng-template>
-        </mat-icon>
-      </button>
+    <div class="movieactions">
+      <mat-card-actions>
+        <button class="actionbtn" mat-button (click)="getGenre(movie.Genre.Name, movie.Genre.Description)">
+          Genre
+        </button>
+        <button class="actionbtn" mat-button color="warn"
+                (click)="getDirector(movie.Director.Name, movie.Director.Bio, movie.Director.Birth,movie.Director.Death)">
+          Director
+        </button>
+        <button class="actionbtn" mat-button color="warn"
+                (click)="getSynopsis(movie.Title, movie.Description, movie.PosterPath)">
+          Synopsis
+        </button>
 
-    </mat-card-actions>
+        <button class="actionbtn" mat-icon-button (click)="toggleFavorite(movie._id)">
+          <mat-icon class="hearticon">
+            <span *ngIf="isFavorite(movie._id); else block">favorite</span>
+            <ng-template #block>favorite_border</ng-template>
+          </mat-icon>
+        </button>
+
+      </mat-card-actions>
+    </div>
   </mat-card>
 </div>
