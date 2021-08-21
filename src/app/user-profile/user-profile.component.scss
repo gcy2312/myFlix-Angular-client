@@ -1,0 +1,101 @@
+$bgcolor: #000000;
+$textcolor: #fff;
+$logocolor: #e50913;
+$textfont: 'Open Sans', sans-serif;
+$titlefont: 'Bebas Neue', sans-serif;
+$impactfont: 'Rampart One', sans-serif;
+$textsize: 18px;
+$titlesize: 28px;
+$titleweight: 600;
+$textweight: 400;
+
+.profile-container{
+  box-sizing: border-box;
+  background-color: $logocolor;
+  display: flex;
+  flex-direction: row;
+  padding-top: 25px;
+  padding-left: 20px;
+  padding-bottom: 70px;
+}
+.form-card{
+  box-sizing: border-box;
+  background-color: $textcolor;
+  color:$bgcolor;
+  padding-top: 30px;
+  text-align: center;
+  padding-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px
+}
+.profiletitle{
+  font-family: $titlefont;
+  font-weight: $titleweight;
+  font-size: $titlesize;
+}
+.formtext{
+  font-family: $textfont;
+  font-size: $textsize;
+}
+.btns{
+  padding-top: 10px;
+}
+.updatebtn{
+  color:$logocolor;
+  font-family: $textfont;
+  font-size: $textsize;
+  font-weight: $textweight;
+}
+.deletebtn{
+  color:$logocolor;
+  font-family: $textfont;
+  font-size: $textsize;
+  font-weight: $textweight;
+}
+.favheader{
+  font-family: $titlefont;
+  font-size: $titlesize;
+  font-weight: $titleweight;
+}
+.favorites-container{
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;  
+  // grid-template-columns: repeat(auto-fill, minmax(350px, 3fr));
+  gap: 1vw;
+  padding: 0 1em;
+  // max-width: 1400px;
+  background-color: $logocolor;
+  padding-top: 10px;
+  background-color: $logocolor;
+  margin-right: 10px;
+}
+.moviecards{
+  color:$textcolor;
+  background-color: $bgcolor;
+  padding-top: 10px;
+}
+.movietitle{
+  font-family: $titlefont;
+  font-weight: $titleweight;
+  font-size: $titlesize;
+  justify-content: center;
+  line-height: 1.2;
+  padding-top: 15px;
+}
+.movieheader{
+  justify-content: space-between;
+}
+
+@media all and (max-width: 750px) {
+  .profile-container {
+    display: block;
+    justify-content: center;
+  }
+  .form-card{
+     margin-left: none;
+  }
+}
+
+
+

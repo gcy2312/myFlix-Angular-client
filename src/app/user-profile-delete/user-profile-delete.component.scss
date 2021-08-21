@@ -1,0 +1,39 @@
+$bgcolor: #000000;
+$textcolor: #fff;
+$logocolor: #e50913;
+$textfont: 'Open Sans', sans-serif;
+$titlefont: 'Bebas Neue', sans-serif;
+$impactfont: 'Rampart One', sans-serif;
+$textsize: 19px;
+$titlesize: 24px;
+$titleweight: 600;
+$textweight: 400;
+
+.delete-container{
+  font-family: $textfont;
+  font-size: $textsize;
+  font-weight: $textweight;
+}
+.deletetitle{
+  justify-content: center;
+  text-align: center;
+  font-family: $textfont;
+  font-weight: 600;
+  font-size: $titlesize;
+  padding-bottom: 5px;
+}
+.actionbtns{
+  justify-content: space-between;
+}
+.cancelbtn{
+  background-color: $textcolor;
+  font-family: $textfont;
+  font-weight: $textweight;
+  font-size: $textsize;
+}
+.deletebtn{
+  background-color: $logocolor;
+  font-family: $textfont;
+  font-weight: $textweight;
+  font-size: $textsize;
+}

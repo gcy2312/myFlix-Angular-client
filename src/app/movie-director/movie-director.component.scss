@@ -1,0 +1,34 @@
+$bgcolor: #000000;
+$textcolor: #fff;
+$logocolor: #e50913;
+$textfont: 'Open Sans', sans-serif;
+$titlefont: 'Bebas Neue', sans-serif;
+$impactfont: 'Rampart One', sans-serif;
+$textsize: 15px;
+$titlesize: 28px;
+$titleweight: 600;
+$textweight: 400;
+
+.dir-container{
+  background-color: $bgcolor;
+  color:$textcolor;
+  border-color: $logocolor;
+  padding: 10px;
+}
+.header{
+    display: flex;
+  justify-content: space-between;
+}
+.dirtitle{
+  font-family: $titlefont;
+  font-size: $titlesize;
+  font-weight: $titleweight;
+}
+.dircontent{
+  font-family: $textfont;
+  font-weight: $textweight;
+  font-size: $textsize;
+}
+.close{
+  color:$logocolor;
+}

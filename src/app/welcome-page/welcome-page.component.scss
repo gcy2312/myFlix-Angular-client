@@ -1,0 +1,61 @@
+$bgcolor: #000000;
+$textcolor: #fff;
+$logocolor: #e50913;
+$textfont: 'Open Sans', sans-serif;
+$titlefont: 'Bebas Neue', sans-serif;
+$impactfont: 'Rampart One', sans-serif;
+$textsize: 19px;
+$titlesize: 23px;
+$titleweight: 600;
+$textweight: 400;
+
+.main-page{
+  background-color: $bgcolor;
+  color: $textcolor;
+  font-family: $textfont;
+  font-weight: $textweight;
+}
+.loginbtn{
+  font-family: $textfont;
+  font-weight: $textweight;
+  font-size: $textsize;
+  background-color: $logocolor;
+}
+.regbtn{
+  font-family: $textfont;
+  font-weight: $textweight;
+  font-size: $textsize;
+}
+
+.regbtn:hover{
+  text-decoration: underline;
+}
+.imglogo{
+  // flex:1 1 auto;
+  width: 500;
+  display: block;
+  text-align: center;
+  padding-top: 75px;
+}
+.logo{
+  width: 400px;
+  height: auto;
+}
+.buttons{
+  display: block;
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 300px;
+  padding-left: 10px;
+}
+.member-text{
+  font-family: $textfont;
+  font-size: $textsize;
+  // padding-right: 2px;
+  padding-left: 8px;
+}
+
+
+
+
+

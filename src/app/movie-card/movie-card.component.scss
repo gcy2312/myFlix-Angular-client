@@ -1,9 +1,56 @@
+$bgcolor: #000000;
+$textcolor: #fff;
+$logocolor: #e50913;
+$textfont: 'Open Sans', sans-serif;
+$titlefont: 'Bebas Neue', sans-serif;
+$impactfont: 'Rampart One', sans-serif;
+$textsize: 19px;
+$titlesize: 28px;
+$titleweight: 600;
+$textweight: 400;
+
 .movies-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 1vw;
   padding: 0 1em;
-  margin: 10px auto;
-  max-width: 1200px;
-  grid-auto-rows: 470px;
+  max-width: 1400px;
+  background-color: $logocolor;
+  padding-top: 10px;
+  background-color: $logocolor;
+}
+.moviecard{
+  background-color: #000000;
+  color:#fff;
+  font-family: $textfont;
+  font-size: $textsize;
+  font-weight: $textweight;
+}
+.movietitle{
+  justify-content: center;
+  text-align: center;
+  font-family: $titlefont;
+  padding-top: 3px;
+}
+.titletext{
+  font-size: $titlesize;
+  line-height: 1;
+}
+.moviesubtitle{
+  color:$textcolor;
+  font-family: $textfont;
+}
+.movieimg{
+  text-align: center;
+}
+.movieactions{
+  justify-content: center;
+  text-align: center;
+}
+.actionbtn{
+  color:$logocolor;
+  font-family: $textfont;
+}
+.hearticon{
+  color: $logocolor;
 }

@@ -1,0 +1,48 @@
+$bgcolor: #000000;
+$textcolor: #fff;
+$logocolor: #e50913;
+$textfont: 'Open Sans', sans-serif;
+$titlefont: 'Bebas Neue', sans-serif;
+$impactfont: 'Rampart One', sans-serif;
+$textsize: 15px;
+$navsize: 22px;
+$titlesize: 28px;
+$titleweight: 600;
+$textweight: 400;
+
+.navbar {
+  box-sizing: border-box;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  background-color: #000000;
+  color:#fff;
+  padding-bottom: 0px;
+}
+
+.nav-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 15px;
+}
+.navlogo{
+  cursor: pointer;
+}
+.profile{
+  color:$logocolor;
+  font-family: $titlefont;
+  font-size: $navsize;
+}
+.logout{
+  color:$logocolor;
+  font-family: $titlefont;
+  font-size: $navsize;
+}
+
+@media all and (max-width: 750px) {
+  .navlogo {
+    width:100px;
+  }
+}

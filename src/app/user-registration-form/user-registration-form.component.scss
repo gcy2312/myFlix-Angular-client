@@ -1,0 +1,35 @@
+$bgcolor: #000000;
+$textcolor: #fff;
+$logocolor: #e50913;
+$textfont: 'Open Sans', sans-serif;
+$titlefont: 'Bebas Neue', sans-serif;
+$impactfont: 'Rampart One', sans-serif;
+$textsize: 19px;
+$titlesize: 24px;
+$titleweight: 600;
+$textweight: 400;
+
+.reg-container{
+  font-family: $textfont;
+  font-size: $textsize;
+  font-weight: $textweight;
+  align-items: center;
+}
+.regtitle{
+  font-family: $textfont;
+  font-weight: 600;
+  font-size: $titlesize;
+  align-self: center;
+  padding-bottom: 5px;
+}
+.regbtn{
+  background-color: $logocolor;
+  font-family: $textfont;
+  font-weight: $textweight;
+  font-size: $textsize;
+}
+.formtext{
+  font-family: $textfont;
+  font-weight: $textweight;
+  font-size: 16px;
+}
