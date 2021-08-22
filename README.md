@@ -2,26 +2,53 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.0.
 
-## Development server
+Using Angular, re-build the client-side for myFlix-client based on
+its existing server-side code (REST API and database), with supporting
+documentation.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+live project: https://gcy2312.github.io/myFlix-Angular-client
 
-## Code scaffolding
+## User Stories
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+As a user, I want to be able to receive information on movies, directors, and genres so that I
+can learn more about movies I’ve watched or am interested in.
+As a user, I want to be able to create a profile so I can save data about my favorite movies.
 
-## Build
+## Technical Requirements
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+● Written in Angular
+● Requires Node.js and npm package
+● Contain user registration and login forms
+● Designed using Angular Material
+● Comments using Typedoc
+● Technical documentation using JSDoc
+● Hosted on GitHub Pages
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Tach
 
-## Running end-to-end tests
+Typescript
+Angular
+Angular Material
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Dependencies
 
-## Further help
+"@angular/animations": "~12.2.0",
+"@angular/cdk": "^12.2.1",
+"@angular/common": "~12.2.0",
+"@angular/compiler": "~12.2.0",
+"@angular/core": "~12.2.0",
+"@angular/forms": "~12.2.0",
+"@angular/material": "^12.2.1",
+"@angular/platform-browser": "~12.2.0",
+"@angular/platform-browser-dynamic": "~12.2.0",
+"@angular/router": "~12.2.0",
+"rxjs": "~6.6.0",
+"tslib": "^2.3.0",
+"zone.js": "~0.11.4"
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Run it locally
+
+Clone/download this repository
+Run npm install
+Run ng serve --open
