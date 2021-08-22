@@ -20,6 +20,12 @@ export class UserProfileComponent implements OnInit {
   movies: any = [];
   userFavs: any = [];
 
+  /**
+   * 
+   * @param dialog 
+   * @param snackBar 
+   * @param fetchApiData 
+   */
   constructor(
     public dialog: MatDialog,
     public snackBar: MatSnackBar,
@@ -30,6 +36,9 @@ export class UserProfileComponent implements OnInit {
     this.getUser();
   }
 
+  /**
+   * gets user details
+   */
   getUser(): void {
     const user = localStorage.getItem('user');
     this.fetchApiData.getUser(user).subscribe((resp: any) => {
@@ -41,6 +50,9 @@ export class UserProfileComponent implements OnInit {
     });
   }
 
+  /**
+   * get user list of favorite movies
+   */
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
       this.movies = resp;
@@ -48,6 +60,11 @@ export class UserProfileComponent implements OnInit {
     });
   }
 
+  /**
+   * filters user favorite movies
+   * @param movie._id
+   * @returns 
+   */
   filterFavs(): void {
     this.movies.forEach((movie: any) => {
       if (this.user.FavoriteMovies.includes(movie._id)) {
@@ -58,6 +75,10 @@ export class UserProfileComponent implements OnInit {
     return this.userFavs;
   }
 
+  /**
+   * removes movie from user list of favorites
+   * @param movieId 
+   */
   removeFav(movieId: string): any {
     this.fetchApiData.deleteFavorite(movieId).subscribe((resp: any) => {
       this.snackBar.open('Removed from favorites!', 'OK', {
@@ -69,12 +90,18 @@ export class UserProfileComponent implements OnInit {
     }, 2000);
   }
 
+  /**
+   * opens modal to update user information
+   */
   openUpdateDialog(): void {
     this.dialog.open(UserProfileUpdateComponent, {
       width: '500px'
     });
   }
 
+  /**
+   * opens modal to delete user account
+   */
   openDeleteDialog(): void {
     this.dialog.open(UserProfileDeleteComponent, {
       width: '500px'

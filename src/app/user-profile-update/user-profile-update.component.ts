@@ -18,6 +18,12 @@ export class UserProfileUpdateComponent implements OnInit {
   movies: any = [];
   userFavs: any = [];
 
+  /**
+   * 
+   * @param fetchApiData 
+   * @param snackBar 
+   * @param dialogRef 
+   */
   constructor(
     public fetchApiData: ApiDataService,
     public snackBar: MatSnackBar,
@@ -28,6 +34,9 @@ export class UserProfileUpdateComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * update user information
+   */
   updateUser(): void {
     this.fetchApiData.editUser(this.userData).subscribe((resp) => {
       this.dialogRef.close(); //this will close modal on success

@@ -19,6 +19,13 @@ export class MovieCardComponent {
   movies: any[] = [];
   userFavs: any[] = [];
 
+  /**
+ *
+ * @param fetchApiData
+ * @param dialog
+ * @param snackBar
+ * @param router
+ */
   constructor(
     public fetchApiData: ApiDataService,
     public snackBar: MatSnackBar,
@@ -29,6 +36,9 @@ export class MovieCardComponent {
     this.getUserFavs();
   }
 
+  /**
+   * GET all movies
+   */
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
       this.movies = resp;
@@ -37,6 +47,13 @@ export class MovieCardComponent {
     });
   }
 
+  /**
+   * opens Director details modal
+   * @param name 
+   * @param bio 
+   * @param birth 
+   * @param death 
+   */
   getDirector(name: string, bio: string, birth: string, death: string): void {
     this.dialog.open(MovieDirectorComponent, {
       data: { name: name, bio: bio, birth: birth, death: death },
@@ -44,6 +61,11 @@ export class MovieCardComponent {
     });
   }
 
+  /**
+   * opens Genre details modal
+   * @param name 
+   * @param description 
+   */
   getGenre(name: string, description: string): void {
     this.dialog.open(MovieGenreComponent, {
       data: { name: name, description: description },
@@ -51,6 +73,12 @@ export class MovieCardComponent {
     });
   }
 
+  /**
+   * opens movie Synopsis modal
+   * @param title 
+   * @param description 
+   * @param poster 
+   */
   getSynopsis(title: string, description: string, poster: string): void {
     this.dialog.open(MovieSynopsisComponent, {
       data: { title, description, poster },
@@ -58,6 +86,11 @@ export class MovieCardComponent {
     });
   }
 
+  /**
+   * check if movie is already in user's favorites list
+   * @param movieId
+   * @returns
+   */
   getUserFavs(): void {
     const user = localStorage.getItem('user');
     this.fetchApiData.getUser(user).subscribe((resp: any) => {
@@ -66,10 +99,20 @@ export class MovieCardComponent {
     console.log(this.userFavs);
   }
 
+  /**
+   * return user's favorites list
+   * @param movieId 
+   * @returns 
+   */
   isFavorite(movieId: string) {
     return this.userFavs.includes(movieId);
   }
 
+  /**
+   * adds or removes movie from user's favorites list
+   * @param movieId 
+   * @returns 
+   */
   toggleFavorite(movieId: string): any {
     if (this.isFavorite(movieId)) {
       this.fetchApiData.deleteFavorite(movieId).subscribe((resp: any) => {
